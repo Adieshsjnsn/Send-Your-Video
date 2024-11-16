@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4cae4c;
+        }
+        small {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Submission Form</h1>
+    <p style="text-align: center;">Please complete the form below to submit your video. Ensure your video follows the guidelines.</p>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="name">Full Name <small>(required)</small>:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        
+        <label for="email">Email Address <small>(required)</small>:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="category">Select a Category:</label>
+        <select id="category" name="category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="education">Educational</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="documentary">Documentary</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="description">Video Description <small>(required)</small>:</label>
+        <textarea id="description" name="description" rows="4" placeholder="Provide a brief description of your video" required></textarea>
+        
+        <label for="questions">Why do you want to share this video? <small>(optional)</small>:</label>
+        <textarea id="questions" name="questions" rows="4" placeholder="Tell us why this video is important"></textarea>
+        
+        <label for="permissions">Do you grant permission for public use of your video?</label>
+        <select id="permissions" name="permissions" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes, I agree</option>
+            <option value="no">No, I do not agree</option>
+        </select>
+        
+        <label for="video">Upload Your Video <small>(max size: 100MB, required)</small>:</label>
+        <input type="file" id="video" name="video" accept="video/*" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
